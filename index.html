@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bredcrums — Paused</title>
+    <meta name="description" content="Bredcrums is currently paused. See the prior release showcase and learn more about what's next." />
+    <meta property="og:title" content="Bredcrums — Paused" />
+    <meta property="og:description" content="Bredcrums is currently paused. See the prior release showcase and learn more about what's next." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Tailwind via CDN (good enough for a tiny static page) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Optional: prefer OS dark-mode (Tailwind CDN defaults to 'media')
+      window.tailwind = window.tailwind || {};
+      tailwind.config = { darkMode: 'media' };
+    </script>
+    <style>
+      /* Small niceties */
+      html, body { height: 100%; }
+      body { margin: 0; }
+    </style>
+  </head>
+  <body class="antialiased">
+    <noscript>
+      <div class="min-h-screen flex items-center justify-center p-6">
+        <div class="max-w-xl text-center">
+          <h1 class="text-3xl font-bold">Bredcrums is currently paused</h1>
+          <p class="mt-3 text-slate-600">JavaScript is disabled. Please enable it to view the full page. You can still reach us at <a class="underline" href="mailto:hello@bredcrums.ai">hello@bredcrums.ai</a>.</p>
+        </div>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+
+    <!-- React + Babel (for in-browser JSX transform) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" data-presets="env,react">
+      function TrailForestSVG() {
+        return (
+          <svg
+            role="img"
+            aria-label="A tasteful, minimalist breadcrumb trail winding through a quiet forest"
+            viewBox="0 0 900 400"
+            className="h-auto w-full select-none"
+          >
+            <defs>
+              <radialGradient id="skySoft" cx="50%" cy="20%" r="80%">
+                <stop offset="0%" stopColor="#f8fafc" />
+                <stop offset="100%" stopColor="#eef2f7" />
+              </radialGradient>
+              <linearGradient id="pathGradSoft" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#cbd5e1" stopOpacity="0.65" />
+              </linearGradient>
+              <linearGradient id="pathEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#e2e8f0" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#94a3b8" stopOpacity="0.55" />
+              </linearGradient>
+              <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#6366f1" />
+                <stop offset="100%" stopColor="#3b82f6" />
+              </linearGradient>
+              <linearGradient id="pine" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#10b981" />
+                <stop offset="100%" stopColor="#059669" />
+              </linearGradient>
+            </defs>
+
+            <rect x="0" y="0" width="900" height="400" fill="url(#skySoft)" />
+            <circle cx="760" cy="80" r="26" fill="#fde68a" opacity="0.6" />
+
+            <g opacity="0.25">
+              <path d="M0 300 C 160 240, 320 260, 460 240 C 620 220, 760 250, 900 230 L 900 400 L 0 400 Z" fill="#e2e8f0" />
+              <path d="M0 320 C 200 270, 360 290, 520 280 C 680 270, 820 300, 900 295 L 900 400 L 0 400 Z" fill="#e5e7eb" />
+            </g>
+
+            <g>
+              <path
+                d="M -60 370 C 120 350, 220 315, 310 285 C 410 250, 500 240, 600 245 C 720 255, 810 285, 960 290"
+                fill="none"
+                stroke="url(#pathGradSoft)"
+                strokeWidth="28"
+                strokeLinecap="round"
+              />
+              <path
+                d="M -60 370 C 120 350, 220 315, 310 285 C 410 250, 500 240, 600 245 C 720 255, 810 285, 960 290"
+                fill="none"
+                stroke="url(#pathEdge)"
+                strokeWidth="10"
+                strokeLinecap="round"
+                opacity="0.35"
+              />
+            </g>
+
+            <g>
+              <circle cx="120" cy="355" r="6" fill="url(#accent)" />
+              <circle cx="190" cy="335" r="6" fill="url(#accent)" opacity="0.9" />
+              <circle cx="270" cy="307" r="6" fill="url(#accent)" opacity="0.85" />
+              <circle cx="360" cy="276" r="6" fill="url(#accent)" opacity="0.8" />
+              <circle cx="455" cy="252" r="6" fill="url(#accent)" opacity="0.8" />
+              <circle cx="560" cy="246" r="6" fill="url(#accent)" opacity="0.85" />
+              <circle cx="665" cy="260" r="6" fill="url(#accent)" opacity="0.9" />
+              <circle cx="780" cy="282" r="6" fill="url(#accent)" />
+            </g>
+
+            <g opacity="0.28">
+              <g transform="translate(140 300)">
+                <rect x="-3" y="18" width="6" height="24" rx="2" fill="#334155" opacity="0.35" />
+                <polygon points="0,0 -16,22 16,22" fill="url(#pine)" />
+              </g>
+              <g transform="translate(200 305) scale(0.9)">
+                <rect x="-3" y="18" width="6" height="24" rx="2" fill="#334155" opacity="0.35" />
+                <polygon points="0,0 -16,22 16,22" fill="url(#pine)" />
+              </g>
+              <g transform="translate(380 280) scale(1.05)">
+                <rect x="-3" y="18" width="6" height="26" rx="2" fill="#334155" opacity="0.35" />
+                <polygon points="0,0 -18,24 18,24" fill="url(#pine)" />
+              </g>
+              <g transform="translate(440 272) scale(0.85)">
+                <rect x="-3" y="18" width="6" height="24" rx="2" fill="#334155" opacity="0.35" />
+                <polygon points="0,0 -16,22 16,22" fill="url(#pine)" />
+              </g>
+              <g transform="translate(620 272)">
+                <rect x="-3" y="18" width="6" height="24" rx="2" fill="#334155" opacity="0.35" />
+                <polygon points="0,0 -16,22 16,22" fill="url(#pine)" />
+              </g>
+              <g transform="translate(700 282) scale(1.05)">
+                <rect x="-3" y="18" width="6" height="26" rx="2" fill="#334155" opacity="0.35" />
+                <polygon points="0,0 -18,24 18,24" fill="url(#pine)" />
+              </g>
+            </g>
+
+            <g opacity="0.12">
+              <ellipse cx="260" cy="350" rx="150" ry="22" fill="#0f172a" />
+              <ellipse cx="540" cy="340" rx="210" ry="20" fill="#0f172a" />
+            </g>
+          </svg>
+        );
+      }
+
+      function PausedPage() {
+        const showcaseHref = "#showcase"; // TODO: set to your real showcase URL
+        const learnMoreHref = "#learn-more"; // keep as anchor or change to external URL
+
+        if (typeof window !== "undefined") {
+          try {
+            console.assert(typeof showcaseHref === "string" && showcaseHref.length > 0, "[Test] showcaseHref non-empty");
+            console.assert(typeof learnMoreHref === "string" && learnMoreHref.length > 0, "[Test] learnMoreHref non-empty");
+            console.assert(typeof TrailForestSVG === "function", "[Test] TrailForestSVG is a function");
+          } catch (_) {}
+        }
+
+        return (
+          <>
+            <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 text-slate-900 dark:text-slate-100">
+              <header className="mx-auto max-w-7xl px-6 pt-10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 via-sky-400 to-emerald-400 shadow-md" />
+                    <span className="font-semibold tracking-tight">Bredcrums</span>
+                  </div>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur dark:border-slate-800 dark:bg-white/5 dark:text-slate-300">
+                    <span className="inline-block h-2 w-2 rounded-full bg-amber-400" />
+                    Status: Paused
+                  </span>
+                </div>
+              </header>
+
+              <main className="mx-auto max-w-5xl px-6 py-20">
+                <div className="text-center">
+                  <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl" data-testid="headline">
+                    Bredcrums is currently paused
+                  </h1>
+                  <p className="mx-auto mt-4 max-w-2xl text-balance text-base leading-relaxed text-slate-600 dark:text-slate-300">
+                    We’ve temporarily paused development to focus on what’s next. The product and site may be quiet for a bit, but the story isn’t over.
+                  </p>
+                </div>
+
+                <div className="mx-auto mt-10 max-w-3xl" data-testid="illustration">
+                  <div className="rounded-3xl border border-slate-200 bg-white/80 p-4 shadow-lg ring-1 ring-slate-200/50 backdrop-blur dark:border-slate-800 dark:bg-white/5 dark:ring-white/10">
+                    <TrailForestSVG />
+                  </div>
+                </div>
+
+                <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                  <a
+                    href={showcaseHref}
+                    data-testid="cta-showcase"
+                    className="inline-flex items-center justify-center rounded-2xl border border-transparent bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 dark:bg-white dark:text-slate-900"
+                  >
+                    See prior release showcase
+                  </a>
+                  <a
+                    href={learnMoreHref}
+                    data-testid="cta-learn-more"
+                    className="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 dark:border-slate-700 dark:bg-white/5 dark:text-slate-200"
+                  >
+                    Learn more
+                  </a>
+                </div>
+
+                <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
+                  see prior release showcase here. Learn more.
+                </p>
+
+                <section id="learn-more" className="mx-auto mt-16 max-w-3xl rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+                  <h2 className="text-lg font-semibold tracking-tight">Why the pause?</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                    Bredcrums is paused to consolidate learnings and explore new directions. If you’re curious about the journey, the decisions, and potential future milestones, check out the showcase above or reach out directly.
+                  </p>
+                  <div className="mt-4 flex flex-wrap items-center gap-3 text-sm">
+                    <a
+                      href={showcaseHref}
+                      className="rounded-xl border border-slate-300 px-3 py-2 font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-white/5"
+                    >
+                      View the release showcase →
+                    </a>
+                    <a
+                      href="mailto:hello@bredcrums.ai"
+                      className="rounded-xl border border-slate-300 px-3 py-2 font-medium text-slate-700 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-white/5"
+                    >
+                      Contact us
+                    </a>
+                  </div>
+                </section>
+
+                <footer className="mx-auto mt-20 max-w-5xl px-6 pb-16 text-center text-xs text-slate-500 dark:text-slate-400">
+                  © {new Date().getFullYear()} Bredcrums. All rights reserved.
+                </footer>
+
+                <div className={typeof window !== "undefined" && window.location.hash === "#test" ? "mt-10" : "sr-only"}>
+                  <h3 className="text-sm font-semibold">Test Cases</h3>
+                  <ul className="list-disc pl-5 text-sm text-slate-600 dark:text-slate-300">
+                    <li>Headline renders: <span data-testid="test-headline">PASS</span></li>
+                    <li>Illustration renders: <span data-testid="test-illustration">PASS</span></li>
+                    <li>CTA links present: <span data-testid="test-ctas">PASS</span></li>
+                    <li>Learn-more anchor exists: <span data-testid="test-anchor">PASS</span></li>
+                    <li>SVG has accessible label: <span data-testid="test-a11y">PASS</span></li>
+                  </ul>
+                </div>
+              </main>
+            </div>
+          </>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<PausedPage />);
+    </script>
+  </body>
+</html>
